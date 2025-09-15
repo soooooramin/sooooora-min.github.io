@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>自己紹介 | 湊 颯</title>
+  <meta name="description" content="湊 颯 の自己紹介・スキル・制作物・SNSリンク。" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="湊 颯 | ポートフォリオ" />
+  <meta property="og:description" content="湊 颯 の自己紹介・スキル・制作物。" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#0ea5e9;
+      --ring: rgba(14,165,233,.35);
+      --shadow: 0 10px 30px rgba(2,6,23,.35);
+    }
+    :root.light{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --accent:#0284c7;
+      --ring: rgba(2,132,199,.25);
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+    }
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background:var(--bg); color:var(--text);
+      line-height:1.7;
+      /* ★ 動くグラデーション背景 */
+      background: radial-gradient(circle at top left, #0ea5e9 0%, transparent 50%),
+                  radial-gradient(circle at bottom right, #9333ea 0%, transparent 50%),
+                  var(--bg);
+      background-attachment: fixed;
+      animation: gradientMove 20s ease infinite;
+      background-size: 200% 200%;
+    }
+    @keyframes gradientMove{ 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+    .container{max-width:1100px; margin-inline:auto; padding: 0 20px}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background: color-mix(in oklab, var(--bg), transparent 35%); border-bottom:1px solid color-mix(in oklab, var(--muted), transparent 75%)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .brand .logo{width:36px; aspect-ratio:1; border-radius:12px; background:linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), #fff 35%)); box-shadow:var(--shadow)}
+    nav ul{display:flex; gap:14px; list-style:none; padding:0; margin:0}
+    nav a{display:inline-block; padding:8px 12px; border-radius:10px; color:var(--text); text-decoration:none; font-weight:600}
+    nav a:is(:hover,:focus){outline:none; background: color-mix(in oklab, var(--accent), transparent 85%)}
+    nav a.active{background: color-mix(in oklab, var(--accent), transparent 80%); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent), transparent 65%)}
+    .actions{display:flex; align-items:center; gap:8px}
+    .btn{appearance:none; border:none; border-radius:12px; padding:10px 14px; font-weight:700; cursor:pointer; color:var(--text); background: color-mix(in oklab, var(--accent), transparent 80%); box-shadow:var(--shadow)}
+    .btn:is(:hover,:focus){outline:2px solid var(--ring)}
+
+    /* Hero */
+    .hero{padding:96px 0 48px}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center}
+    .tag{display:inline-flex; align-items:center; gap:8px; font-size:.9rem; color:var(--muted); background: color-mix(in oklab, var(--accent), transparent 90%); padding:6px 10px; border-radius:999px; border:1px solid color-mix(in oklab, var(--accent), transparent 70%)}
+    .title{font-size: clamp(32px, 3.5vw + 1rem, 56px); line-height:1.15; margin:16px 0}
+    .lead{font-size:1.15rem; color:var(--muted); margin-bottom:22px}
+    .hero .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .avatar{width:160px; aspect-ratio:1; border-radius:24px; object-fit:cover; border:4px solid color-mix(in oklab, var(--accent), transparent 70%); box-shadow:var(--shadow)}
+    .card{background:var(--card); border-radius:18px; padding:18px; box-shadow:var(--shadow); border:1px solid color-mix(in oklab, var(--accent), transparent 80%)}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2{font-size: clamp(22px, 2vw + .8rem, 32px); margin:0 0 18px}
+    .sub{color:var(--muted); margin: 2px 0 18px; font-size: .95rem}
+
+    /* About */
+    .kv{display:grid; gap:12px; grid-template-columns: repeat(3, 1fr)}
+    .kv .kvc{background:var(--card); border:1px solid color-mix(in oklab, var(--accent), transparent 80%); border-radius:16px; padding:14px; text-align:center}
+    .kv .num{font-weight:900; font-feature-settings:"tnum" 1; font-variant-numeric: tabular-nums; font-size:1.6rem}
+    .kv .cap{color:var(--muted); font-size:.9rem}
+
+    /* Skills */
+    .chips{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{padding:8px 12px; border-radius:999px; background: color-mix(in oklab, var(--accent), transparent 90%); border:1px solid color-mix(in oklab, var(--accent), transparent 65%); font-weight:700; font-size:.95rem}
+
+    /* Projects */
+    .grid{display:grid; gap:16px; grid-template-columns: repeat(3, 1fr)}
+    .project{display:grid; grid-template-rows: 140px auto; overflow:hidden}
+    .thumb{width:100%; height:100%; object-fit:cover; border-radius:12px}
+    .project h3{margin:12px 0 6px}
+    .meta{color:var(--muted); font-size:.9rem}
+
+    /* Timeline */
+    .timeline{position:relative; margin-left:10px}
+    .timeline:before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background: color-mix(in oklab, var(--accent), transparent 70%)}
+    .titem{position:relative; margin: 0 0 18px 28px}
+    .titem:before{content:""; position:absolute; left:-20px; top:8px; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px color-mix(in oklab, var(--accent), transparent 70%)}
+    .titem .when{font-weight:800}
+    .titem .where{color:var(--muted)}
+
+    /* Footer */
+    footer{padding:32px 0; color:var(--muted); border-top:1px solid color-mix(in oklab, var(--muted), transparent 75%)}
+
+    /* Utilities */
+    .row{display:flex; gap:12px; flex-wrap:wrap}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+    /* Responsiveness */
+    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} .grid{grid-template-columns:1fr 1fr} .kv{grid-template-columns:1fr} }
+    @media (max-width:560px){ nav ul{display:none} .grid{grid-template-columns:1fr} }
+
+    /* Interactions */
+    .controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:6px 0 16px}
+    .controls input, .controls select{padding:10px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--accent), transparent 70%); background:transparent; color:var(--text)}
+    .chip{cursor:pointer; user-select:none}
+    .chip.active{background: color-mix(in oklab, var(--accent), transparent 80%); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent), transparent 60%)}
+    .hidden{display:none !important}
+    .toast{position:fixed; inset:auto 0 24px 0; margin:auto; width:max-content; max-width:90vw; background:var(--card); color:var(--text); border:1px solid color-mix(in oklab, var(--accent), transparent 70%); padding:10px 14px; border-radius:12px; box-shadow:var(--shadow); opacity:0; transform:translateY(10px); transition:.3s;}
+    .toast.show{opacity:1; transform:translateY(0)}
+    /* Progress bar */
+    #progress{position:fixed; top:0; left:0; height:3px; width:0; background:linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent), #fff 25%)); z-index:60}
+    /* Subtle motion */
+    .project{transition:transform .2s ease, box-shadow .2s ease}
+    .project:hover{transform:translateY(-2px)}
+    .reveal{opacity:0; transform:translateY(8px); transition:.5s ease}
+    .reveal.show{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">本文へスキップ</a>
+  <div id="progress" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="ホームへ">
+        <span class="logo" aria-hidden="true"></span>
+        <span>湊 颯</span>
+      </a>
+      <nav aria-label="主要ナビゲーション">
+        <ul>
+          <li><a href="#about">自己紹介</a></li>
+          <li><a href="#timeline">経歴</a></li>
+          <li><a href="#contact">連絡先</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button class="btn" id="themeToggle" title="テーマ切り替え" aria-live="polite">🌙 ダーク</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-label="イントロダクション">
+      <div class="hero-grid">
+        <div>
+          <span class="tag">大学生です。</span>
+          <h1 class="title">湊 颯</h1>
+          <p class="lead">初めまして、湊 颯(みなとそら)と申します。本名です。</p>
+          <div class="cta">
+            <a class="btn" href="#contact">連絡する</a>
+          </div>
+        </div>
+        <div class="card" style="display:flex; align-items:center; gap:16px">
+          <img class="avatar" src="IMG_7370.JPG" alt="湊 颯の写真" />
+          <div>
+            <p class="sub">現在地: <strong>日本 / 石川</strong></p>
+            <p class="sub">メール: <a id="mailto" href="mailto:minatosora0409@gmail.com">minatosora0409@gmail.com</a> <button class="btn" id="copyEmail" style="padding:6px 10px">コピー</button></p>
+            <div class="row">
+              <a class="btn" href="https://www.instagram.com/sooooora_min?igsh=b2FmaThxaXB5cDhq&utm_source=qr" aria-label="Instagram へ">Instagram</a>
+              <a class="btn" href="https://github.com/soooooramin" aria-label="GitHub へ">GitHub</a>
+              <a class="btn" href="https://www.facebook.com/share/14Ka36bVLuH/?mibextid=wwXIfr" aria-label="Facebook へ">Facebook</a>
+              <a class="btn" href="https://x.com/sooooora_min?s=21" aria-label="X(Twitter) へ">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">自己紹介</h2>
+      <p>はじめまして。 <strong>湊 颯</strong> と申します。現在は金沢大学の大学生として山の上にあるキャンパスで活動しています。</p>
+      <p>情報分野に興味があり、プログラミングやシステム設計、機械学習などの学習をしています。<br>
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">スキル</h2>
+      <p class="sub">得意な技術やツール</p>
+      <div class="chips" role="list" id="skillChips">
+        <span class="chip" role="listitem" data-skill="Python">Python</span>
+        <span class="chip" role="listitem" data-skill="ピアノ / キーボード">ピアノ / キーボード</span>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" aria-labelledby="timeline-title">
+      <h2 id="timeline-title">経歴</h2>
+      <div class="timeline">
+        <div class="titem reveal">
+          <div class="when">2025 - 現在</div>
+          <div class="where">金沢大学 - 理工学域 - 電子情報通信学類</div>
+          <p>サークルの設立</p>
+        </div>
+        <div class="titem reveal">
+          <div class="when">2022 - 2025</div>
+          <div class="where">富山県立大門高等学校 - 情報コース</div>
+          <p>生徒会長、情報課題研究、富山インターンシップジャーニなど</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">連絡先</h2>
+      <p class="sub">お気軽にご連絡ください</p>
+      <div class="card">
+        <form class="row" action="mailto:minatosora0409@gmail.com" method="post" enctype="text/plain" onsubmit="return confirm('メールアプリが起動します。よろしいですか？')">
+          <label>
+            <span class="sr-only">お名前</span>
+            <input required name="name" placeholder="お名前" style="padding:12px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--accent), transparent 70%); background:transparent; color:var(--text)" />
+          </label>
+          <label>
+            <span class="sr-only">メール</span>
+            <input required type="email" name="email" placeholder="メール" style="padding:12px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--accent), transparent 70%); background:transparent; color:var(--text)" />
+          </label>
+          <label style="flex:1 1 100%">
+            <span class="sr-only">メッセージ</span>
+            <textarea required name="message" placeholder="メッセージ" rows="4" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--accent), transparent 70%); background:transparent; color:var(--text)"></textarea>
+          </label>
+          <button class="btn" type="submit">送信</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Sora Minato. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 初期テーマ
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const saved = localStorage.getItem('theme');
+    const root = document.documentElement;
+    function applyTheme(mode){
+      if(mode === 'light'){ root.classList.add('light'); } else { root.classList.remove('light'); }
+      document.querySelector('#themeToggle').textContent = mode === 'light' ? '☀️ ライト' : '🌙 ダーク';
+      localStorage.setItem('theme', mode);
+    }
+    applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+    document.getElementById('themeToggle').addEventListener('click', ()=>{
+      const mode = root.classList.contains('light') ? 'dark' : 'light';
+      applyTheme(mode);
+    });
+
+    // ナビのアクティブ表示
+    const links = [...document.querySelectorAll('nav a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const idx = sections.indexOf(e.target);
+        if(idx >= 0){
+          const l = links[idx];
+          if(e.isIntersecting){ l.classList.add('active'); }
+          else { l.classList.remove('active'); }
+        }
+      });
+    }, {rootMargin:'-50% 0px -45% 0px', threshold:0});
+    sections.forEach(s=> s && io.observe(s));
+
+    // 進捗バー
+    const progress = document.getElementById('progress');
+    const onScroll = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    // メールコピー & トースト
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+    function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(()=> toast.classList.remove('show'), 1600); }
+    const copyBtn = document.getElementById('copyEmail');
+    if(copyBtn){ copyBtn.addEventListener('click', async ()=>{ const email = document.getElementById('mailto').textContent.trim(); try{ await navigator.clipboard.writeText(email); showToast('メールアドレスをコピーしました'); } catch{ showToast('コピーに失敗しました'); } }); }
+
+    // スキル×プロジェクト フィルタ／検索／並び替え
+    const chips = [...document.querySelectorAll('#skillChips .chip')];
+    const grid = document.getElementById('projectGrid');
+    const cards = grid ? [...grid.querySelectorAll('.project')] : [];
+    const search = document.getElementById('projectSearch');
+    const sortSel = document.getElementById('projectSort');
+    const counter = document.getElementById('projectCount');
+
+    let activeSkill = null;
+    function applyFilters(){
+      if(!grid) return;
+      const q = (search?.value || '').toLowerCase();
+      const skill = activeSkill;
+      let visible = 0;
+      cards.forEach(c=>{
+        const title = (c.dataset.title||'').toLowerCase();
+        const tech = (c.dataset.tech||'').toLowerCase();
+        const hitQ = !q || title.includes(q) || tech.includes(q);
+        const hitS = !skill || tech.includes(skill.toLowerCase());
+        const show = hitQ && hitS;
+        c.classList.toggle('hidden', !show);
+        if(show) visible++;
+      });
+      if(counter) counter.textContent = `${visible} 件表示中`;
+    }
+
+    chips.forEach(ch => ch.addEventListener('click', ()=>{
+      if(activeSkill === ch.dataset.skill){ activeSkill = null; chips.forEach(x=>x.classList.remove('active')); }
+      else { activeSkill = ch.dataset.skill; chips.forEach(x=>x.classList.toggle('active', x===ch)); }
+      applyFilters();
+    }));
+    search?.addEventListener('input', applyFilters);
+
+    function sortCards(){
+      if(!grid) return;
+      const type = sortSel.value;
+      const getTitle = el => (el.dataset.title||'').toLowerCase();
+      const getDate = el => new Date(el.dataset.updated || 0).getTime();
+      const arr = [...cards];
+      if(type==='az') arr.sort((a,b)=> getTitle(a).localeCompare(getTitle(b)));
+      else if(type==='za') arr.sort((a,b)=> getTitle(b).localeCompare(getTitle(a)));
+      else arr.sort((a,b)=> getDate(b)-getDate(a));
+      arr.forEach(el=> grid.appendChild(el));
+    }
+    sortSel?.addEventListener('change', ()=>{ sortCards(); applyFilters(); });
+
+    // お問い合わせ 文字数カウンタ
+    const textarea = document.querySelector('textarea[name="message"]');
+    if(textarea){
+      const counterEl = document.createElement('div');
+      counterEl.className = 'sub';
+      counterEl.style.textAlign = 'right';
+      textarea.parentElement.appendChild(counterEl);
+      function updateCount(){ counterEl.textContent = `${textarea.value.length} / 500`; }
+      textarea.maxLength = 500; textarea.addEventListener('input', updateCount); updateCount();
+    }
+
+    // Reveal アニメーション
+    const revealTargets = [
+      ...document.querySelectorAll('.project'),
+      ...document.querySelectorAll('.kv .kvc'),
+      ...document.querySelectorAll('.timeline .titem')
+    ];
+    const io2 = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io2.unobserve(e.target); } }); }, {threshold:.15, rootMargin:'0px 0px -5% 0px'});
+    revealTargets.forEach(el=> io2.observe(el));
+
+    // 初期適用
+    sortCards();
+    applyFilters();
+  </script>
+
+  <!--
+  使い方メモ：
+  1) 湊 颯 等のプレースホルダを書き換えてください。
+  2) 画像は <img src="..."> のURLを差し替えるか、/images 配下に配置してパスを入れてください。
+  3) ドメインやOG画像があれば <meta property="og:*"> を更新してください。
+  4) Netlify / GitHub Pages に index.html として配置すれば公開できます。
+  5) 問い合わせフォームを本格運用する場合は、外部フォームサービス（Formspree / Google フォーム等）へ差し替え推奨。
+  -->
+</body>
+</html>
